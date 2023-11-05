@@ -2,7 +2,7 @@
 
 void fact(vector<long long> &v, long long n, long long x) {
     if(x*v.back()>n)return;
-    v.push_back(x*v.back());
+    v.push_back(x*v.back()) ;
     fact(v,n,x+1);
 }
 
