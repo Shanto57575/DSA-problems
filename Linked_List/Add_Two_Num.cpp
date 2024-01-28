@@ -24,7 +24,7 @@ public:
             int sum = first + second + carry; 
             int new_Digit = sum % 10;
             carry = sum / 10;
-            curr->next = new ListNode(new_Digit % 10);
+            curr->next = new ListNode(new_Digit);
             curr = curr->next;
             if(l1!=NULL) l1 = l1->next;
             if(l2!=NULL) l2 = l2->next;
