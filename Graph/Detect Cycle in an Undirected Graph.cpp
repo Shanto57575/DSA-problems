@@ -46,3 +46,40 @@ public:
         return false;     
     }
 };
+
+// using DFS
+
+class Graph {
+    bool dfs(int node, int parent, vector<bool> &vis, vector<int> adj[])
+    {
+        vis[node] = true;
+        for(int i : adj[node])
+        {
+            if(!vis[i])
+            {
+                if(dfs(i, node, vis, adj)) return true;
+            }
+            else if(parent != i)return true;
+        }
+
+        return false;
+    }
+public:
+    bool detectCycle(int V, vector<int> adj[]) {
+        vector<bool> vis(V, false);
+
+        for(int i=0; i<V; i++)
+        {
+           if(!vis[i])
+           {
+               if(dfs(i, -1, vis, adj))
+               return true;
+           } 
+        }
+
+        return false;
+    }
+};
+
+// tc --> O(N + 2E) + O(N)
+// sc --> O(N)
