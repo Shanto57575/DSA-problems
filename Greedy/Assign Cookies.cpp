@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/assign-cookies/description/
 
-// tc --> O(n log n)
-// sc --> O(1)
+// tc --> O(n⋅logn+m⋅logm)
+// sc --> O(logm+logn)
 
 class Solution {
 public:
